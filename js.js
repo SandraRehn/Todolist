@@ -3,15 +3,13 @@ let checkbox = document.querySelector('.checkbox');
 //let checkID = document.getElementById('idcheck');
 let wrapper = document.querySelector('.wrapper');
 let list = document.querySelector('.list');
-let checkArr = [];
-checkArr.push()
 
-wrapper.addEventListener('keypress', function(e){
-    let key = e.which || e.keyCode;
-    console.log(e.target);
-    if(key === 13){
+let count = 1;
+
+function createTODO(){
+    
        // let node = document.createElement("LI");
-        let count = 2;
+       
        // let textnode = document.createTextNode("");
         let test = 
         `<li>
@@ -29,7 +27,15 @@ wrapper.addEventListener('keypress', function(e){
             });
         })(count);
         count++;
+}
 
+createTODO();
+
+wrapper.addEventListener('keypress', function(e){
+    let key = e.which || e.keyCode;
+    console.log(e.target);
+    if(key === 13){
+        createTODO();
     }
     document.querySelector('.list:last-child').focus();
 })
